@@ -36,7 +36,7 @@ const internalDomains = require("../util/internal.json");
 const reservedDomains = require("../util/reserved.json");
 
 const domainsPath = path.resolve("domains");
-const files = fs.readdirSync(domainsPath);
+const files = fs.readdirSync(domainsPath).filter((file) => file.endsWith(".json"));
 
 function findDuplicateKeys(jsonString) {
     const duplicateKeys = new Set();
